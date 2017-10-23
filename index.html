@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="string-operation.js"></script>
+</head>
+<body>
+<label for="">Введите текст</label>
+<input type="text" id="input-value">
+<button onclick="getLength(document.getElementById('input-value'))" id="string-btn">OK</button>
+<br>
+<div id="result"></div>
+<div class="show-image">
+    <button onclick="showImage()">ShowIMG</button>
+</div>
+<div class="site">
+    <label for="">Введите адрес сайта</label>
+    <input type="text" id="input-site">
+    <button onclick="getSiteName(document.getElementById('input-site'))" id="btn-site">OK</button>
+    <div id="name-site"></div>
+</div>
+<div class="site">
+    <label for="">Введите адрес сайта</label>
+    <input type="text" id="site-name">
+    <button onclick="getShortSiteName(document.getElementById('site-name'))">OK</button>
+    <div id="web-name"></div>
+</div>
+<br>
+<div class="registration">
+        <label for="user-name">Name</label>
+        <input type="text" name="user-name" id="user-name">
+        <label for="last-name">Last Name</label>
+        <input type="text" name="last-name" id="last-name">
+        <label for="password">Password</label>
+        <input type="password" name="user-name" id="password">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email">
+        <button id="reg" type="submit" onclick="formValidation()">Registration</button>
+</div>
+
+<div class="site">
+    <label for="">Введите символ</label>
+    <input type="text" id="symbol-name">
+    <button onclick="getCharCode(document.getElementById('symbol-name'))">OK</button>
+    <div id="code-number"></div>
+</div>
+
+</body>
+</html>
