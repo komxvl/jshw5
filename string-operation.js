@@ -93,18 +93,35 @@ function getCharCode(symbol) {
 }
 
 function formValidation(){
-    var nameUser = document.getElementById("user-name").value.trim();
-    var lastName = document.getElementById("last-name").value.trim();
+    var nameUser = document.getElementById("user-name").value.split(' ').join('');
+	document.getElementById("user-name").value = nameUser;
+    var lastName = document.getElementById("last-name").value.split(' ').join('');
+	document.getElementById("last-name").value = lastName;
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
-    var adr_pattern=/^[0-9a-z_]+@[0-9a-z_]+?\.[a-z]{2,6}/i;
-    var prov=adr_pattern.test(email);
-    if(password.length > 5 && prov ) {
-        console.log("all good");
+	var at = email.split('');
+	var count = 0;
+	for(var i = 0 ; i <at.length;i++){
+		if(at[i] == '@'){
+			count++;
+		}
+	}
+	console.log("@ count",count);
+	console.log("user-name",document.getElementById("user-name").value);
+	console.log("email",at);
+   /* var adr_pattern=/^[0-9a-z_]+@[0-9a-z_]+?\.[a-z]{2,6}/i;
+    var prov=adr_pattern.test(email);*/
+    if(password.length >= 5 && count == 2 ) {
+        alert("Вы зарегистрировались")
         return true;
     }
-    else{
-        console.log("smtng wrong...");
+    else if( count > 1) {
+        alert("Имя почты должно содержать один символ '@' ")
         return false;
     }
+	else if(password.length < 5){
+		 alert("Логин больше 5 символов!")
+        return false;
+	}
+	
 }
